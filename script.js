@@ -6,7 +6,7 @@
 
 'use strict';
 
-var CONTACT_FORM_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyF0OoMo-QDxOGJnc_Rx2GtqlQj9_vLiPBYaWfwDdrJegIKwEk6hgzeWDM66EBHwBGm/exec';
+var CONTACT_FORM_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbylRgi6mRepZz0lMO4LfXT7H2eGXwPyEOujCJN4PNP_id1vDPDW48wy0XIY3BdjbbEr/exec';
 var COMPANY_LOGOS = {
     doceree: 'https://resume0775.s3.eu-north-1.amazonaws.com/doceree_logo.svg',
     codefire: 'https://resume0775.s3.eu-north-1.amazonaws.com/codefire.webp',
