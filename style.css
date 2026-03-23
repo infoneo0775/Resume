@@ -432,7 +432,7 @@ section {
     color: var(--ink-900);
     margin-right: 0.35rem;
     vertical-align: middle;
-    color: whitesmoke;
+    /* color: whitesmoke; */
 }
 
 .section-heading i {
@@ -2876,6 +2876,10 @@ section {
 #contact h1,
 #contact h1 span {
     color: #fff;
+}
+
+#contact .section-heading span {
+    color: whitesmoke;
 }
 
 #contact-container {
