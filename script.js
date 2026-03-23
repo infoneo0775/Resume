@@ -22,7 +22,7 @@ var RESUME_DATA = {
                   'Proven track record of delivering scalable, high-performance applications ' +
                   'in fast-paced environments. Passionate about leveraging technical expertise ' +
                   'to drive innovation and develop solutions that benefit society and humanity.',
-        image:    'https://ui-avatars.com/api/?name=Harish+Nishad&size=200&background=0c831f&color=fff&bold=true&format=svg',
+        image:    'https://resume0775.s3.eu-north-1.amazonaws.com/withCard.jpg',
         quickFacts: [
             { value: '4+', label: 'Years Experience' },
             { value: '6',  label: 'Major Projects' },
@@ -130,57 +130,452 @@ var RESUME_DATA = {
 
     projects: [
         {
-            name:  'CNG Sales Management System',
-            type:  'Full-Stack Web Application',
-            image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80',
-            highlights: [
-                'Full-stack platform managing nationwide CNG operations across 10+ modules.',
-                'Real-time reporting with PDF/Excel export, lazy loading and API caching.'
+            title: 'GAIL CNG Operations Platform',
+            domain: 'Energy Operations',
+            company: 'Infoneo at GAIL Corporate Office',
+            period: 'Jan 2025 - Present',
+            icon: 'fas fa-industry',
+            summary: 'Enterprise workflow platform for nationwide CNG operations, approvals, station-level governance, and daily operational control.',
+            techStack: ['Node.js', 'Express', 'MySQL', 'RBAC', 'REST APIs', 'Workflow Automation'],
+            quickHighlights: [
+                'Architected a modular backend with 35+ domain-specific controllers.',
+                'Implemented GA-based workflows and station-level authorization.',
+                'Digitised compressor testing, logistics fuel records, and vendor onboarding.',
+                'Delivered on-site solutions appreciated by BIS officers.'
+            ],
+            businessOverview: 'Built for GAIL\'s nationwide CNG operations, this platform consolidated operational workflows that previously depended on fragmented processes, multiple approvals, and high-touch manual coordination.',
+            problemStatement: 'Business teams needed a reliable system to control station operations, user permissions, and workflow execution across multiple units without slowing down field activity or compliance processes.',
+            role: 'Software Engineer',
+            responsibilities: [
+                'Designed backend modules for domain-specific operations and approval flows.',
+                'Worked directly with on-site stakeholders to translate business rules into application workflows.',
+                'Implemented secure access control aligned with station and business-unit responsibilities.'
+            ],
+            featuresImplemented: [
+                'Modular controller structure for nationwide CNG operations.',
+                'Station-level authorization and role-based workflow access.',
+                'Modules covering compressor testing, logistics fuel management, and CBG vendor onboarding.',
+                'Structured approval routes for operational actions and audits.'
+            ],
+            technologiesUsed: ['Node.js', 'Express', 'MySQL', 'Stored Procedures', 'Role-Based Access Control', 'REST APIs'],
+            challengesFaced: [
+                'Managing domain complexity across multiple operational functions.',
+                'Aligning application behavior with real-world client workflows at site level.',
+                'Maintaining security and authorization clarity across business units.'
+            ],
+            solutionsDelivered: [
+                'Introduced a modular backend architecture to separate operational domains cleanly.',
+                'Mapped approval rules and station permissions directly into the application layer.',
+                'Created structured workflows that reduced ambiguity in day-to-day operations.'
+            ],
+            businessImpact: [
+                'Improved workflow reliability for nationwide CNG operations.',
+                'Enabled stronger governance through secure, station-level access control.',
+                'Earned appreciation from BIS officers for delivery quality.'
+            ],
+            moduleBreakdown: [
+                'Operational workflow modules',
+                'Station authorization flows',
+                'Compressor testing processes',
+                'Logistics fuel record handling',
+                'CBG vendor onboarding journeys'
+            ],
+            architecturePoints: [
+                'Backend structured around domain-specific controllers for maintainability.',
+                'Authorization logic aligned to real operational boundaries.',
+                'Database-backed workflow execution for enterprise-scale usage.'
             ]
         },
         {
-            name:  'GAILGAS Intranet',
-            type:  'Internal Portal',
-            image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80',
-            highlights: [
-                'Modular Angular intranet with 25+ sub-applications for employee workflows.',
-                'Secure auth, responsive dashboards, and real-time backend integration.'
+            title: 'GAIL Reporting, PDF and Excel Automation',
+            domain: 'Reporting Automation',
+            company: 'Infoneo at GAIL Corporate Office',
+            period: 'Jan 2025 - Present',
+            icon: 'fas fa-file-lines',
+            summary: 'High-value reporting layer for operational visibility, document exports, and faster decision support across CNG business workflows.',
+            techStack: ['MySQL', 'Node.js', 'PDF Generation', 'Excel Export', 'API Caching', 'Query Optimization'],
+            quickHighlights: [
+                'Reduced report runtimes by 40%+ through SQL optimization.',
+                'Built PDF and Excel export pipelines for operational reporting.',
+                'Supported real-time reporting with lazy loading and API caching.',
+                'Improved reporting usability for business and compliance teams.'
+            ],
+            businessOverview: 'This reporting workstream focused on making operational data usable at business speed through reliable exports, optimized queries, and structured reporting endpoints.',
+            problemStatement: 'Existing reports were slow, difficult to operationalize, and too dependent on manual extraction for teams that needed consistent business and compliance visibility.',
+            role: 'Software Engineer',
+            responsibilities: [
+                'Optimized database access patterns for report-heavy workflows.',
+                'Implemented export pipelines for PDF and Excel-based reporting.',
+                'Supported API responses designed for large operational datasets.'
+            ],
+            featuresImplemented: [
+                'Real-time report generation endpoints.',
+                'PDF and Excel export flows for business reporting.',
+                'Lazy-loading support for large result sets.',
+                'Caching-aware APIs for frequent report consumers.'
+            ],
+            technologiesUsed: ['Node.js', 'MySQL', 'Indexing', 'Stored Procedures', 'PDF Pipelines', 'Excel Pipelines'],
+            challengesFaced: [
+                'Handling slow-running queries on operational datasets.',
+                'Generating business-friendly exports without degrading API responsiveness.',
+                'Balancing reporting depth with performance expectations.'
+            ],
+            solutionsDelivered: [
+                'Optimized query design, indexing, and stored procedure usage.',
+                'Built export-oriented workflows around PDF and Excel outputs.',
+                'Introduced response patterns that improved usability for large reports.'
+            ],
+            businessImpact: [
+                'Cut report runtimes by more than 40%.',
+                'Improved access to operational and compliance data through direct exports.',
+                'Made reporting workflows faster and more dependable for business users.'
+            ],
+            moduleBreakdown: [
+                'Operational reports',
+                'Excel export workflows',
+                'PDF output pipelines',
+                'Query-optimized data access'
+            ],
+            architecturePoints: [
+                'Performance centered on query optimization and stored procedure usage.',
+                'Report APIs designed for large data volumes and export-friendly responses.',
+                'Caching and lazy loading used to protect frontend experience.'
             ]
         },
         {
-            name:  'Finhaat – Financial Services',
-            type:  'Web Application',
-            image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80',
-            highlights: [
-                'Claim workflows, dashboards, and high-volume Excel validation pipelines.',
-                'Cron jobs and Redis caching improved API responsiveness by 45%.'
+            title: 'GAILGAS Intranet Application Suite',
+            domain: 'Internal Portal',
+            company: 'GAILGAS',
+            period: 'Enterprise delivery project',
+            icon: 'fas fa-sitemap',
+            summary: 'Modular intranet suite with 25+ sub-applications for employee workflows, secure access, and connected internal operations.',
+            techStack: ['Angular', 'JavaScript', 'REST APIs', 'Authentication', 'Dashboards', 'Responsive UI'],
+            quickHighlights: [
+                'Delivered a modular Angular intranet with 25+ sub-applications.',
+                'Built secure authentication and responsive dashboards.',
+                'Connected internal workflows with real-time backend integration.',
+                'Improved usability for everyday employee operations.'
+            ],
+            businessOverview: 'The intranet suite supported internal employee workflows through a modular frontend architecture designed for operational clarity and daily usability.',
+            problemStatement: 'Internal business processes were spread across multiple disconnected flows and needed a single, secure application layer that employees could use reliably across modules.',
+            role: 'Software Engineer',
+            responsibilities: [
+                'Delivered frontend modules aligned with employee workflow needs.',
+                'Integrated dashboards and backend-connected views into the intranet suite.',
+                'Supported secure access patterns and responsive user experiences.'
+            ],
+            featuresImplemented: [
+                '25+ sub-applications within a modular intranet structure.',
+                'Authentication-aware user journeys.',
+                'Responsive dashboards for internal visibility.',
+                'Real-time backend integration for workflow updates.'
+            ],
+            technologiesUsed: ['Angular', 'JavaScript', 'REST APIs', 'Authentication', 'Dashboard UI'],
+            challengesFaced: [
+                'Maintaining consistency across many intranet modules.',
+                'Supporting secure access without adding friction to employees.',
+                'Keeping the UI responsive while integrating business workflows.'
+            ],
+            solutionsDelivered: [
+                'Used a modular application structure for maintainable feature delivery.',
+                'Implemented secure flows for internal access and data visibility.',
+                'Improved interface consistency across employee-facing modules.'
+            ],
+            businessImpact: [
+                'Created a more unified intranet experience for internal users.',
+                'Improved workflow accessibility through secure, responsive interfaces.',
+                'Enabled connected internal operations through integrated dashboards.'
+            ],
+            moduleBreakdown: [
+                'Employee workflow modules',
+                'Dashboard views',
+                'Authentication flows',
+                'Backend-connected utility screens'
+            ],
+            architecturePoints: [
+                'Frontend organized as a modular intranet suite.',
+                'Dashboard views designed around real-time backend integration.',
+                'Authentication patterns applied consistently across modules.'
             ]
         },
         {
-            name:  'CR360 Survey Platform',
-            type:  'Employee Feedback System',
-            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
-            highlights: [
-                '360-degree feedback, client/staff surveys, EHS/CSR reporting modules.',
-                'Role-based dashboards and real-time analytics.'
+            title: 'Finhaat Claims Workflow and Dashboard',
+            domain: 'Financial Services',
+            company: 'CodeFire',
+            period: 'May 2023 - Sep 2024',
+            icon: 'fas fa-chart-line',
+            summary: 'Claims initiation and approval workflow system backed by dashboards that improved operational clarity and reduced manual processing effort.',
+            techStack: ['Node.js', 'JavaScript', 'Dashboards', 'Workflow Automation', 'Redis', 'AWS'],
+            quickHighlights: [
+                'Led claim initiation and approval workflow development.',
+                'Delivered dashboard modules for business visibility.',
+                'Reduced manual processing by 40%.',
+                'Worked directly with clients and engineering teams during delivery.'
+            ],
+            businessOverview: 'Built to support financial service operations, this workflow system streamlined how claims moved from initiation through approval while giving teams visibility through dashboard-driven status tracking.',
+            problemStatement: 'Manual claim handling created operational drag, reduced visibility, and increased coordination overhead across teams responsible for initiating, validating, and approving requests.',
+            role: 'Software Engineer',
+            responsibilities: [
+                'Led delivery of claim workflow modules and supporting dashboards.',
+                'Translated business process requirements into application logic.',
+                'Coordinated with clients and team members throughout implementation.'
+            ],
+            featuresImplemented: [
+                'Claim initiation workflow.',
+                'Approval lifecycle handling.',
+                'Dashboard views for operational tracking.',
+                'Workflow paths aligned with business review stages.'
+            ],
+            technologiesUsed: ['Node.js', 'Redis', 'AWS', 'PM2', 'Jenkins', 'JavaScript'],
+            challengesFaced: [
+                'Reducing manual effort while preserving workflow control.',
+                'Providing visibility across different processing stages.',
+                'Supporting delivery quality while coordinating directly with clients.'
+            ],
+            solutionsDelivered: [
+                'Converted manual claim handling into structured digital workflows.',
+                'Added dashboards to expose workflow state and pending actions.',
+                'Delivered modules that supported faster and more traceable operations.'
+            ],
+            businessImpact: [
+                'Reduced manual processing by 40%.',
+                'Improved visibility for teams managing financial workflows.',
+                'Created a stronger operational backbone for claim handling.'
+            ],
+            moduleBreakdown: [
+                'Claim initiation',
+                'Approval workflows',
+                'Operational dashboards',
+                'Business visibility modules'
+            ],
+            architecturePoints: [
+                'Workflow logic designed around business approval stages.',
+                'Dashboard layer used to expose operational progress.',
+                'Platform support included deployment-aware engineering practices.'
             ]
         },
         {
-            name:  'Aware™ – Supply Chain',
-            type:  'Traceability Web Platform',
-            image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80',
-            highlights: [
-                'Tamper-proof material verification and real-time tracking.',
-                'Automated Digital Product Passport creation, improving transparency by 50%.'
+            title: 'Finhaat Data Validation and Scheduled Services',
+            domain: 'Workflow Automation',
+            company: 'CodeFire',
+            period: 'May 2023 - Sep 2024',
+            icon: 'fas fa-gears',
+            summary: 'Automation-heavy backend workstream for high-volume Excel validation, scheduled services, caching, and deployment support.',
+            techStack: ['Excel Validation', 'Cron Jobs', 'Redis', 'Node.js', 'Jenkins', 'PM2'],
+            quickHighlights: [
+                'Built high-volume Excel validation workflows.',
+                'Improved data accuracy and reduced processing errors by 35%.',
+                'Designed 5+ cron services and Redis-backed performance improvements.',
+                'Helped reduce API load by 45% and downtime incidents by 30%.'
+            ],
+            businessOverview: 'This workstream focused on data-heavy operational reliability, combining scheduled jobs, validation logic, caching, and deployment support to keep business workflows dependable at scale.',
+            problemStatement: 'Teams needed better control over high-volume spreadsheet inputs, recurring background processing, and API performance under operational load.',
+            role: 'Software Engineer',
+            responsibilities: [
+                'Built validation logic for high-volume Excel processing.',
+                'Designed scheduled services for recurring workflow tasks.',
+                'Supported deployment and runtime reliability using PM2, Jenkins, and AWS.'
+            ],
+            featuresImplemented: [
+                'Excel data validation pipelines.',
+                'Five or more cron-driven backend services.',
+                'Redis caching for high-frequency API access.',
+                'Deployment support aligned with CI/CD operations.'
+            ],
+            technologiesUsed: ['Node.js', 'Redis', 'Cron Jobs', 'Jenkins', 'PM2', 'AWS'],
+            challengesFaced: [
+                'Validating high-volume input data without slowing operations.',
+                'Managing repeated backend workloads efficiently.',
+                'Reducing API strain while keeping delivery stable in production.'
+            ],
+            solutionsDelivered: [
+                'Introduced structured validation for Excel-driven workflows.',
+                'Automated repeatable backend tasks using cron services.',
+                'Reduced repeated API computation with Redis caching and deployment discipline.'
+            ],
+            businessImpact: [
+                'Improved data accuracy and reduced processing errors by 35%.',
+                'Reduced API load by 45%.',
+                'Reduced downtime incidents by 30%.'
+            ],
+            moduleBreakdown: [
+                'Excel validation pipelines',
+                'Scheduled backend services',
+                'Caching layer support',
+                'Deployment and uptime workflows'
+            ],
+            architecturePoints: [
+                'Background jobs separated from request-driven application flows.',
+                'Caching introduced to offload repeated API pressure.',
+                'Operational delivery supported through CI/CD and process management.'
             ]
         },
         {
-            name:  'ClojBug – Test Management',
-            type:  'QA Web Application',
-            image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80',
-            highlights: [
-                'Scalable test-case management with 30+ REST APIs.',
-                'Increased QA efficiency by 75% and reduced debugging time.'
+            title: 'Aware Traceability and Digital Product Passport',
+            domain: 'Supply Chain Traceability',
+            company: 'PrimaFelicitas',
+            period: 'Jun 2022 - May 2023',
+            icon: 'fas fa-link',
+            summary: 'Traceability platform for tamper-proof material verification, supply chain visibility, and digital product passport automation.',
+            techStack: ['Node.js', 'REST APIs', 'Traceability', 'Compliance Reporting', 'Verification Flows'],
+            quickHighlights: [
+                'Engineered core verification features for material traceability.',
+                'Reduced API processing time by 40%.',
+                'Automated Digital Product Passport generation.',
+                'Improved compliance reporting efficiency by 50%.'
+            ],
+            businessOverview: 'Aware focused on supply-chain trust by making material verification traceable, auditable, and easier to operationalize across product life-cycle workflows.',
+            problemStatement: 'The platform needed to prove material authenticity and track chain-of-custody style information while also reducing friction in compliance-oriented documentation.',
+            role: 'Junior Node.js Developer',
+            responsibilities: [
+                'Delivered core backend features for traceability workflows.',
+                'Optimized API behavior for faster verification handling.',
+                'Automated product passport generation for compliance use cases.'
+            ],
+            featuresImplemented: [
+                'Tamper-proof material verification logic.',
+                'Real-time traceability support.',
+                'Digital Product Passport generation.',
+                'Compliance-oriented reporting automation.'
+            ],
+            technologiesUsed: ['Node.js', 'REST APIs', 'Verification Workflows', 'Compliance Reporting'],
+            challengesFaced: [
+                'Supporting trust-sensitive verification flows.',
+                'Reducing latency in API-driven processing.',
+                'Automating document-heavy compliance outputs.'
+            ],
+            solutionsDelivered: [
+                'Improved verification pipeline efficiency in core API flows.',
+                'Automated digital passport generation for downstream reporting.',
+                'Built backend functionality aligned with transparency-focused use cases.'
+            ],
+            businessImpact: [
+                'Reduced API processing time by 40%.',
+                'Improved compliance reporting efficiency by 50%.',
+                'Strengthened transparency for supply-chain workflows.'
+            ],
+            moduleBreakdown: [
+                'Verification services',
+                'Traceability workflows',
+                'Digital Product Passport automation',
+                'Compliance reporting support'
+            ],
+            architecturePoints: [
+                'Backend flows designed around trusted verification events.',
+                'Automation used to reduce manual compliance effort.',
+                'API optimization applied to time-sensitive workflow processing.'
+            ]
+        },
+        {
+            title: 'ClojBug Test Management Platform',
+            domain: 'QA Engineering',
+            company: 'PrimaFelicitas',
+            period: 'Jun 2022 - May 2023',
+            icon: 'fas fa-bug',
+            summary: 'Test-case management platform built to improve QA workflow speed, visibility, and engineering coordination.',
+            techStack: ['Node.js', 'REST APIs', 'QA Workflow', 'Test Management', 'Web Application'],
+            quickHighlights: [
+                'Built a scalable test-case management application.',
+                'Delivered 30+ REST APIs for QA operations.',
+                'Improved QA workflow speed by 75%.',
+                'Reduced debugging time through better workflow structure.'
+            ],
+            businessOverview: 'ClojBug supported engineering and QA teams with a central workflow for test management, reducing scattered tracking and improving coordination around quality processes.',
+            problemStatement: 'QA execution was slowed down by fragmented tracking and the lack of a dedicated system for managing test cases and supporting workflow visibility.',
+            role: 'Junior Node.js Developer',
+            responsibilities: [
+                'Built backend APIs and feature flows for QA management.',
+                'Supported scalable workflow handling for test operations.',
+                'Improved usability for teams managing case execution and follow-up.'
+            ],
+            featuresImplemented: [
+                'Test-case management workflows.',
+                '30+ REST APIs for platform operations.',
+                'Workflow support for faster QA execution.',
+                'Tracking-oriented platform capabilities for testing teams.'
+            ],
+            technologiesUsed: ['Node.js', 'REST APIs', 'JavaScript', 'Web Application'],
+            challengesFaced: [
+                'Making QA workflows easier to manage at scale.',
+                'Supporting multiple platform actions through a clean API surface.',
+                'Improving workflow speed without adding complexity.'
+            ],
+            solutionsDelivered: [
+                'Created a dedicated system for test-case lifecycle management.',
+                'Delivered an API-rich platform to support QA team needs.',
+                'Improved workflow organization for better debugging and follow-through.'
+            ],
+            businessImpact: [
+                'Improved QA workflow speed by 75%.',
+                'Reduced debugging time through clearer process management.',
+                'Created stronger operational support for testing teams.'
+            ],
+            moduleBreakdown: [
+                'Test-case lifecycle management',
+                'QA workflow APIs',
+                'Execution tracking views',
+                'Debugging support workflows'
+            ],
+            architecturePoints: [
+                'API-first structure enabled multiple QA actions through one platform.',
+                'Workflow organization prioritized execution clarity.',
+                'Platform scope focused on day-to-day QA productivity.'
+            ]
+        },
+        {
+            title: 'Physician Campaign Management Platform',
+            domain: 'Healthcare Technology',
+            company: 'Doceree',
+            period: 'Oct 2021 - Mar 2022',
+            icon: 'fas fa-stethoscope',
+            summary: 'MEAN-stack web application for physician-targeted campaign management, feature delivery, and experimentation support.',
+            techStack: ['MEAN Stack', 'Web Application', 'Campaign Modules', 'A/B Testing', 'Product Collaboration'],
+            quickHighlights: [
+                'Delivered end-to-end features in a new MEAN-stack application.',
+                'Built modules for physician-targeted campaign management.',
+                'Integrated with physician-only digital platforms.',
+                'Supported A/B testing implementation with design and product teams.'
+            ],
+            businessOverview: 'This platform supported physician-focused digital campaign operations through a dedicated application built for campaign management and iterative product delivery.',
+            problemStatement: 'The product needed a dedicated web application to manage campaign workflows and support integration with physician-only digital channels in a controlled, measurable way.',
+            role: 'Software Engineer',
+            responsibilities: [
+                'Delivered end-to-end feature implementation in the MEAN stack.',
+                'Built campaign-focused modules aligned with product requirements.',
+                'Collaborated closely with design and product teams on experimentation support.'
+            ],
+            featuresImplemented: [
+                'Campaign management modules.',
+                'Platform integration for physician-focused workflows.',
+                'End-to-end web application features.',
+                'A/B testing support for product experimentation.'
+            ],
+            technologiesUsed: ['MEAN Stack', 'JavaScript', 'Web Application', 'A/B Testing'],
+            challengesFaced: [
+                'Building a new application while shaping product behavior quickly.',
+                'Supporting campaign workflows tied to specialized digital channels.',
+                'Coordinating engineering delivery with design and product inputs.'
+            ],
+            solutionsDelivered: [
+                'Delivered core campaign modules for the new application.',
+                'Implemented features that supported targeted physician workflows.',
+                'Enabled product experimentation through A/B testing support.'
+            ],
+            businessImpact: [
+                'Supported physician-targeted campaign execution in a dedicated application.',
+                'Improved product delivery through close cross-functional collaboration.',
+                'Established a strong foundation for further feature rollout.'
+            ],
+            moduleBreakdown: [
+                'Campaign management',
+                'Targeting-related workflows',
+                'Experiment support',
+                'Feature delivery for web operations'
+            ],
+            architecturePoints: [
+                'End-to-end feature delivery within a MEAN-stack application.',
+                'Modules aligned with campaign workflow needs.',
+                'Experimentation support integrated with product delivery.'
             ]
         }
     ],
@@ -200,6 +595,8 @@ var RESUME_DATA = {
 // ── State ────────────────────────────────────────────────────
 var progressBars = [];
 var timelineDetailsStore = {};
+var projectDetailsStore = {};
+var projectDetailLastTrigger = null;
 
 // ── Utilities ────────────────────────────────────────────────
 
@@ -490,37 +887,196 @@ function buildTimeline(items, detailGroup) {
     );
 }
 
-/**
- * Builds a single project portfolio card.
- * @param {{ name: string, type: string, image: string, highlights: string[] }} project
- * @returns {string}
- */
-function buildProjectCard(project) {
-    var bullets = safeArray(project.highlights)
-        .map(function (line) { return '<li>' + escapeHtml(line) + '</li>'; })
+function buildProjectTechBadges(items) {
+    return safeArray(items)
+        .map(function (item) {
+            return '<span class="project-tech-badge">' + escapeHtml(item) + '</span>';
+        })
         .join('');
+}
+
+function buildProjectQuickHighlights(items, limit) {
+    return safeArray(items)
+        .slice(0, limit)
+        .map(function (item) {
+            return '<li><i class="fas fa-check-circle" aria-hidden="true"></i><span>' + escapeHtml(item) + '</span></li>';
+        })
+        .join('');
+}
+
+function buildProjectOverviewPanel(items) {
+    var projects = safeArray(items);
+    var domains = {};
+
+    projects.forEach(function (project) {
+        if (project && project.domain) {
+            domains[project.domain] = true;
+        }
+    });
 
     return (
-        '<article class="project-card">' +
-        '<div class="project-media">' +
-        '<img src="' + escapeHtml(project.image) + '" alt="' + escapeHtml(project.name) + '" loading="lazy">' +
+        '<aside class="project-overview-panel" aria-label="Project case study overview">' +
+        '<p class="project-overview-kicker">Case Study Collection</p>' +
+        '<h3 class="project-overview-title">Backend-first delivery across enterprise operations, dashboards, automation workflows, and production-ready business systems.</h3>' +
+        '<p class="project-overview-copy">Each card opens into a recruiter-friendly case study covering problem context, implementation scope, engineering decisions, and measurable outcomes from real project work.</p>' +
+        '<div class="project-overview-stats">' +
+        '<div class="project-overview-stat"><strong>' + projects.length + '</strong><span>Case Studies</span></div>' +
+        '<div class="project-overview-stat"><strong>' + Object.keys(domains).length + '</strong><span>Domains</span></div>' +
+        '<div class="project-overview-stat"><strong>API + UI</strong><span>Delivery Blend</span></div>' +
         '</div>' +
-        '<div class="project-card-body">' +
-        '<span class="project-type">' + escapeHtml(project.type) + '</span>' +
-        '<h4 class="project-title">' + escapeHtml(project.name) + '</h4>' +
-        '<ul class="project-points">' + bullets + '</ul>' +
+        '<div class="project-overview-tags">' +
+        '<span>Backend Architecture</span>' +
+        '<span>Dashboards</span>' +
+        '<span>PDF / Excel Pipelines</span>' +
+        '<span>Deployment & Caching</span>' +
         '</div>' +
+        '</aside>'
+    );
+}
+
+/**
+ * Builds a single project case-study card.
+ * @param {Object} project
+ * @param {string} detailId
+ * @returns {string}
+ */
+function buildProjectCard(project, detailId) {
+    return (
+        '<article class="project-case-item">' +
+        '<button type="button" class="project-case-card project-case-trigger" data-project-id="' + escapeHtml(detailId) + '" aria-haspopup="dialog" aria-label="Open details for ' + escapeHtml(project.title) + '">' +
+        '<div class="project-case-top">' +
+        '<div class="project-case-icon" aria-hidden="true"><i class="' + escapeHtml(project.icon || 'fas fa-folder-open') + '"></i></div>' +
+        '<div class="project-case-meta">' +
+        '<span class="project-case-domain">' + escapeHtml(project.domain || 'Project') + '</span>' +
+        '<span class="project-case-company">' + escapeHtml(project.company || '') + '</span>' +
+        '</div>' +
+        '<i class="fas fa-arrow-up-right-from-square project-case-arrow" aria-hidden="true"></i>' +
+        '</div>' +
+        '<h3 class="project-case-title">' + escapeHtml(project.title || '') + '</h3>' +
+        '<p class="project-case-summary">' + escapeHtml(project.summary || '') + '</p>' +
+        '<div class="project-tech-row">' + buildProjectTechBadges(project.techStack) + '</div>' +
+        '<div class="project-case-footer">' +
+        '<span class="project-case-period">' + escapeHtml(project.period || '') + '</span>' +
+        '</div>' +
+        '</button>' +
         '</article>'
     );
 }
 
 /**
- * Builds all project portfolio cards.
+ * Builds all project case-study cards with an overview panel.
  * @param {Array} items
  * @returns {string}
  */
 function buildProjects(items) {
-    return safeArray(items).map(buildProjectCard).join('');
+    var projects = safeArray(items);
+    var cards = projects.map(function (project, index) {
+        var detailId = 'project-' + index;
+        projectDetailsStore[detailId] = project;
+        return buildProjectCard(project, detailId);
+    }).join('');
+
+    return (
+        '<div class="project-showcase">' +
+        buildProjectOverviewPanel(projects) +
+        '<div class="project-case-grid">' + cards + '</div>' +
+        '</div>'
+    );
+}
+
+function buildProjectDetailList(items) {
+    return '<ul class="project-detail-list">' + safeArray(items)
+        .map(function (item) {
+            return '<li>' + escapeHtml(item) + '</li>';
+        })
+        .join('') + '</ul>';
+}
+
+function buildProjectInsightItem(title, iconClass, content, extraClass) {
+    return (
+        '<article class="project-insight-item' + (extraClass ? ' ' + extraClass : '') + '">' +
+        '<h4 class="project-insight-title"><i class="' + escapeHtml(iconClass) + '" aria-hidden="true"></i><span>' + escapeHtml(title) + '</span></h4>' +
+        '<div class="project-insight-body">' + content + '</div>' +
+        '</article>'
+    );
+}
+
+function buildProjectLinkButtons(items) {
+    return safeArray(items)
+        .map(function (item) {
+            return '<a class="project-detail-link" href="' + escapeHtml(item.url) + '" target="_blank" rel="noreferrer noopener">' + escapeHtml(item.label) + '</a>';
+        })
+        .join('');
+}
+
+function buildProjectDetailContent(project) {
+    var infoCards = [
+        { label: 'Company', value: project.company || '' },
+        { label: 'Timeline', value: project.period || '' },
+        { label: 'Role', value: project.role || '' }
+    ].map(function (item) {
+        return (
+            '<div class="project-detail-meta-row">' +
+            '<span class="project-detail-meta-key">' + escapeHtml(item.label) + '</span>' +
+            '<strong class="project-detail-meta-value">' + escapeHtml(item.value || 'Not specified') + '</strong>' +
+            '</div>'
+        );
+    }).join('');
+
+    var overviewContent =
+        '<p class="project-detail-text">' + escapeHtml(project.businessOverview || '') + '</p>' +
+        '<p class="project-detail-text project-detail-text-muted">' + escapeHtml(project.problemStatement || '') + '</p>';
+
+    var roleContent =
+        '<p class="project-detail-role"><span>Role</span>' + escapeHtml(project.role || '') + '</p>' +
+        buildProjectDetailList(project.responsibilities);
+
+    var technologiesContent = '<div class="project-detail-tech-grid">' + buildProjectTechBadges(project.technologiesUsed || project.techStack) + '</div>';
+
+    var detailCards = [
+        buildProjectInsightItem('Project Context', 'fas fa-briefcase', overviewContent, 'project-insight-item-wide'),
+        buildProjectInsightItem('Role and Responsibilities', 'fas fa-user-gear', roleContent),
+        buildProjectInsightItem('Technologies Used', 'fas fa-code', technologiesContent),
+        buildProjectInsightItem('Features Implemented', 'fas fa-layer-group', buildProjectDetailList(project.featuresImplemented)),
+        buildProjectInsightItem('Business Impact', 'fas fa-chart-column', buildProjectDetailList(project.businessImpact)),
+        buildProjectInsightItem('Challenges Faced', 'fas fa-triangle-exclamation', buildProjectDetailList(project.challengesFaced)),
+        buildProjectInsightItem('Solutions Delivered', 'fas fa-wand-magic-sparkles', buildProjectDetailList(project.solutionsDelivered))
+    ];
+
+    if (safeArray(project.moduleBreakdown).length) {
+        detailCards.push(
+            buildProjectInsightItem('Module Breakdown', 'fas fa-diagram-project', buildProjectDetailList(project.moduleBreakdown))
+        );
+    }
+
+    if (safeArray(project.architecturePoints).length) {
+        detailCards.push(
+            buildProjectInsightItem('Architecture and Workflow Notes', 'fas fa-network-wired', buildProjectDetailList(project.architecturePoints))
+        );
+    }
+
+    if (safeArray(project.links).length) {
+        detailCards.push(
+            buildProjectInsightItem('Links', 'fas fa-link', '<div class="project-detail-links">' + buildProjectLinkButtons(project.links) + '</div>', 'project-insight-item-wide')
+        );
+    }
+
+    return (
+        '<div class="project-detail-hero">' +
+        '<div class="project-detail-header">' +
+        '<div class="project-detail-icon" aria-hidden="true"><i class="' + escapeHtml(project.icon || 'fas fa-folder-open') + '"></i></div>' +
+        '<div class="project-detail-header-copy">' +
+        '<p class="project-detail-kicker">' + escapeHtml(project.domain || 'Project Case Study') + '</p>' +
+        '<h3 id="project-detail-title" class="project-detail-title">' + escapeHtml(project.title || '') + '</h3>' +
+        '<p class="project-detail-subtitle">' + escapeHtml(project.company || '') + (project.period ? ' | ' + escapeHtml(project.period) : '') + '</p>' +
+        '<p class="project-detail-summary">' + escapeHtml(project.summary || '') + '</p>' +
+        '</div>' +
+        '</div>' +
+        '<div class="project-detail-meta-panel">' + infoCards + '</div>' +
+        '<div class="project-detail-top-tech">' + buildProjectTechBadges(project.techStack) + '</div>' +
+        '</div>' +
+        '<div class="project-insight-grid">' + detailCards.join('') + '</div>'
+    );
 }
 
 /**
@@ -642,6 +1198,7 @@ function bindResumeData(data) {
     ];
 
     timelineDetailsStore = {};
+    projectDetailsStore = {};
 
     bindPersonalSection(safeObject(d.personal));
 
@@ -696,6 +1253,7 @@ function initialisePage() {
     setupReveal();
     setupTimelineAnimations();
     setupTimelineDetailDialog();
+    setupProjectDetailDialog();
     setupContactForm();
 
     // Apply initial scroll state
@@ -855,6 +1413,103 @@ function setupTimelineDetailDialog() {
 
         if (event.key === 'Escape') {
             closeTimelineDetail();
+        }
+    });
+}
+
+function ensureProjectDetailModal() {
+    var modal = document.getElementById('project-detail-modal');
+    if (modal) return modal;
+
+    modal = document.createElement('div');
+    modal.id = 'project-detail-modal';
+    modal.className = 'project-detail-modal';
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML = '' +
+        '<div class="project-detail-backdrop" data-project-detail-close="true"></div>' +
+        '<div class="project-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="project-detail-title">' +
+        '<button type="button" class="project-detail-close" aria-label="Close project details" data-project-detail-close="true">' +
+        '<i class="fas fa-xmark" aria-hidden="true"></i>' +
+        '</button>' +
+        '<div id="project-detail-content"></div>' +
+        '</div>';
+
+    document.body.appendChild(modal);
+    return modal;
+}
+
+function openProjectDetail(detailId, trigger) {
+    var modal = ensureProjectDetailModal();
+    var content = document.getElementById('project-detail-content');
+    var dialog = modal ? modal.querySelector('.project-detail-dialog') : null;
+    var project = projectDetailsStore[detailId];
+
+    if (!modal || !content || !project) return;
+
+    projectDetailLastTrigger = trigger || null;
+    content.innerHTML = buildProjectDetailContent(project);
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('has-modal-open');
+    if (dialog) dialog.scrollTop = 0;
+
+    var closeButton = modal.querySelector('.project-detail-close');
+    if (closeButton) closeButton.focus();
+}
+
+function closeProjectDetail() {
+    var modal = document.getElementById('project-detail-modal');
+    if (!modal) return;
+
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('has-modal-open');
+
+    if (projectDetailLastTrigger) {
+        projectDetailLastTrigger.focus();
+        projectDetailLastTrigger = null;
+    }
+}
+
+function trapProjectDetailFocus(event) {
+    var modal = document.getElementById('project-detail-modal');
+    if (!modal || !modal.classList.contains('is-open') || event.key !== 'Tab') return;
+
+    var focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (!focusable.length) return;
+
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+    }
+}
+
+function setupProjectDetailDialog() {
+    ensureProjectDetailModal();
+
+    document.addEventListener('click', function (event) {
+        var trigger = event.target.closest('.project-case-trigger');
+        if (trigger) {
+            openProjectDetail(trigger.getAttribute('data-project-id'), trigger);
+            return;
+        }
+
+        if (event.target.closest('[data-project-detail-close="true"]')) {
+            closeProjectDetail();
+        }
+    });
+
+    document.addEventListener('keydown', function (event) {
+        trapProjectDetailFocus(event);
+
+        if (event.key === 'Escape') {
+            closeProjectDetail();
         }
     });
 }
