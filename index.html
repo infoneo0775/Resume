@@ -57,6 +57,7 @@
                     <div class="hero-cta">
                         <a href="#contact">Hire Me</a>
                         <a href="#portfolio">View Work</a>
+                        <a href="https://resume0775.s3.eu-north-1.amazonaws.com/Harish+Nishad+Resume.pdf" target="_blank" rel="noreferrer noopener" download aria-label="Download Resume"><i class="fas fa-download" aria-hidden="true"></i></a>
                     </div>
 
                     <ul id="hero-social-icons" class="horizontal-list social-icons" aria-label="Social links"></ul>
@@ -251,10 +252,28 @@
             <!-- Left: Contact form -->
             <div id="contact-form-container">
                 <form id="contact-form" novalidate>
-                    <input type="text" name="name" placeholder="Your Name" required autocomplete="name" />
-                    <input type="email" name="email" placeholder="Your Email" required autocomplete="email" />
-                    <input type="text" name="subject" placeholder="Subject" />
-                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <p class="form-required-note"><span class="form-required-asterisk" aria-hidden="true">*</span> Marked fields are mandatory.</p>
+
+                    <div class="form-field">
+                        <label class="form-label" for="contact-name">Your Name <span class="form-required-asterisk" aria-hidden="true">*</span></label>
+                        <input id="contact-name" type="text" name="name" placeholder="Your Name" required autocomplete="name" />
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="contact-email">Your Email <span class="form-required-asterisk" aria-hidden="true">*</span></label>
+                        <input id="contact-email" type="email" name="email" placeholder="Your Email" required autocomplete="email" />
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="contact-subject">Subject <span class="form-required-asterisk" aria-hidden="true">*</span></label>
+                        <input id="contact-subject" type="text" name="subject" placeholder="Subject" required />
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="contact-message">Your Message <span class="form-required-asterisk" aria-hidden="true">*</span></label>
+                        <textarea id="contact-message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+
                     <button type="submit">Send Message</button>
                 </form>
             </div>

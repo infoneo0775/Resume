@@ -42,9 +42,9 @@ var RESUME_DATA = {
             'Deployment support with AWS, Jenkins, PM2, Docker, and caching'
         ],
         socials: [
-            { icon: 'fab fa-github',   url: 'https://github.com/' },
-            { icon: 'fab fa-linkedin', url: 'https://linkedin.com/in/' },
-            { icon: 'fab fa-twitter',  url: 'https://twitter.com/' }
+            { icon: 'fab fa-github',   url: 'https://github.com/harish0775' },
+            { icon: 'fab fa-linkedin', url: 'https://www.linkedin.com/in/harish0775' },
+            { icon: 'fab fa-twitter',  url: 'https://x.com/harish0775' }
         ]
     },
 
