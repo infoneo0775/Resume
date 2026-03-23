@@ -6,6 +6,8 @@
 
 'use strict';
 
+var CONTACT_FORM_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbylRgi6mRepZz0lMO4LfXT7H2eGXwPyEOujCJN4PNP_id1vDPDW48wy0XIY3BdjbbEr/exec';
+
 // ── Static Resume Data ───────────────────────────────────────
 var RESUME_DATA = {
 
@@ -694,6 +696,7 @@ function initialisePage() {
     setupReveal();
     setupTimelineAnimations();
     setupTimelineDetailDialog();
+    setupContactForm();
 
     // Apply initial scroll state
     handleScroll();
@@ -853,6 +856,288 @@ function setupTimelineDetailDialog() {
         if (event.key === 'Escape') {
             closeTimelineDetail();
         }
+    });
+}
+
+function getContactFieldLabel(fieldName) {
+    var labels = {
+        name: 'Name',
+        email: 'Email',
+        subject: 'Subject',
+        message: 'Message'
+    };
+    return labels[fieldName] || 'Field';
+}
+
+function getContactFieldError(field) {
+    var value = field.value.trim();
+    var fieldName = field.name;
+
+    if (field.hasAttribute('required') && !value) {
+        return getContactFieldLabel(fieldName) + ' is required.';
+    }
+
+    if (fieldName === 'email' && value) {
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(value)) {
+            return 'Enter a valid email address.';
+        }
+    }
+
+    if (fieldName === 'name' && value.length < 2) {
+        return 'Name must be at least 2 characters.';
+    }
+
+    if (fieldName === 'subject' && value.length > 120) {
+        return 'Subject must be 120 characters or fewer.';
+    }
+
+    if (fieldName === 'message' && value && value.length < 10) {
+        return 'Message must be at least 10 characters.';
+    }
+
+    return '';
+}
+
+function getFieldErrorElement(field) {
+    if (!field || !field.id) return null;
+    return document.getElementById(field.id + '-error');
+}
+
+function setContactFieldError(field, message) {
+    var errorEl = getFieldErrorElement(field);
+    if (!errorEl) return;
+
+    if (message) {
+        field.classList.add('form-input-invalid');
+        field.setAttribute('aria-invalid', 'true');
+        errorEl.textContent = message;
+        errorEl.hidden = false;
+    } else {
+        field.classList.remove('form-input-invalid');
+        field.removeAttribute('aria-invalid');
+        errorEl.textContent = '';
+        errorEl.hidden = true;
+    }
+}
+
+function validateContactField(field) {
+    var message = getContactFieldError(field);
+    setContactFieldError(field, message);
+    return !message;
+}
+
+function ensureContactFormHelpers(form) {
+    var fields = form.querySelectorAll('input[name], textarea[name]');
+    var status = document.getElementById('contact-form-status');
+
+    if (!status) {
+        status = document.createElement('div');
+        status.id = 'contact-form-status';
+        status.className = 'form-status-message';
+        status.hidden = true;
+        status.setAttribute('role', 'status');
+        status.setAttribute('aria-live', 'polite');
+        form.appendChild(status);
+    }
+
+    fields.forEach(function (field) {
+        if (!field.id) {
+            field.id = 'contact-' + field.name;
+        }
+
+        var errorId = field.id + '-error';
+        var nextElement = field.nextElementSibling;
+
+        field.setAttribute('aria-describedby', errorId);
+
+        if (!nextElement || nextElement.id !== errorId) {
+            var errorEl = document.createElement('p');
+            errorEl.id = errorId;
+            errorEl.className = 'form-field-error';
+            errorEl.hidden = true;
+            field.insertAdjacentElement('afterend', errorEl);
+        }
+    });
+
+    return status;
+}
+
+function showContactFormStatus(form, type, message) {
+    var status = ensureContactFormHelpers(form);
+    status.className = 'form-status-message is-' + type;
+    status.textContent = message;
+    status.hidden = false;
+}
+
+function hideContactFormStatus(form) {
+    var status = document.getElementById('contact-form-status');
+    if (!status) return;
+    status.hidden = true;
+    status.textContent = '';
+    status.className = 'form-status-message';
+}
+
+function ensureContactPopup() {
+    var popup = document.getElementById('contact-popup');
+    if (popup) return popup;
+
+    popup = document.createElement('div');
+    popup.id = 'contact-popup';
+    popup.className = 'contact-popup';
+    popup.setAttribute('aria-hidden', 'true');
+    popup.innerHTML = '' +
+        '<div class="contact-popup-backdrop" data-popup-close="true"></div>' +
+        '<div class="contact-popup-card" role="dialog" aria-modal="true" aria-labelledby="contact-popup-title">' +
+        '<button type="button" class="contact-popup-close" aria-label="Close message" data-popup-close="true">' +
+        '<i class="fas fa-xmark" aria-hidden="true"></i>' +
+        '</button>' +
+        '<div class="contact-popup-icon" id="contact-popup-icon"></div>' +
+        '<h3 class="contact-popup-title" id="contact-popup-title"></h3>' +
+        '<p class="contact-popup-text" id="contact-popup-text"></p>' +
+        '</div>';
+
+    document.body.appendChild(popup);
+
+    popup.addEventListener('click', function (event) {
+        if (event.target.closest('[data-popup-close="true"]')) {
+            popup.classList.remove('is-open');
+            popup.setAttribute('aria-hidden', 'true');
+        }
+    });
+
+    return popup;
+}
+
+function showContactPopup(type, title, message) {
+    var popup = ensureContactPopup();
+    var icon = document.getElementById('contact-popup-icon');
+    var popupTitle = document.getElementById('contact-popup-title');
+    var popupText = document.getElementById('contact-popup-text');
+
+    popup.className = 'contact-popup is-open is-' + type;
+    popup.setAttribute('aria-hidden', 'false');
+    icon.innerHTML = type === 'success'
+        ? '<i class="fas fa-circle-check" aria-hidden="true"></i>'
+        : '<i class="fas fa-circle-exclamation" aria-hidden="true"></i>';
+    popupTitle.textContent = title;
+    popupText.textContent = message;
+}
+
+function handleContactSubmitSuccess(form, fields) {
+    fields.forEach(function (field) {
+        setContactFieldError(field, '');
+    });
+
+    form.reset();
+    showContactFormStatus(form, 'success', 'Message sent successfully. I will get back to you soon.');
+    showContactPopup('success', 'Message Sent Successfully', 'Thanks for reaching out. Your message has been submitted successfully.');
+}
+
+function setupContactForm() {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+
+    var fields = Array.prototype.slice.call(form.querySelectorAll('input[name], textarea[name]'));
+    ensureContactFormHelpers(form);
+
+    fields.forEach(function (field) {
+        field.addEventListener('blur', function () {
+            validateContactField(field);
+        });
+
+        field.addEventListener('input', function () {
+            if (field.classList.contains('form-input-invalid')) {
+                validateContactField(field);
+            }
+            hideContactFormStatus(form);
+        });
+    });
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        hideContactFormStatus(form);
+
+        if (!CONTACT_FORM_SCRIPT_URL || CONTACT_FORM_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL') {
+            showContactFormStatus(form, 'error', 'Contact form URL is missing. Update the Google Apps Script deployment URL.');
+            showContactPopup('error', 'Configuration Missing', 'Add the Google Apps Script deployment URL before sending messages.');
+            return;
+        }
+
+        var submitButton = form.querySelector('button[type="submit"]');
+        var originalButtonText = submitButton ? submitButton.textContent : '';
+        var formData = {
+            name: form.querySelector('input[name="name"]').value.trim(),
+            email: form.querySelector('input[name="email"]').value.trim(),
+            subject: form.querySelector('input[name="subject"]').value.trim(),
+            message: form.querySelector('textarea[name="message"]').value.trim()
+        };
+
+        var firstInvalidField = null;
+        var isFormValid = fields.every(function (field) {
+            var isValid = validateContactField(field);
+            if (!isValid && !firstInvalidField) {
+                firstInvalidField = field;
+            }
+            return isValid;
+        });
+
+        if (!isFormValid) {
+            showContactFormStatus(form, 'error', 'Please correct the highlighted fields and try again.');
+            showContactPopup('error', 'Form Not Submitted', 'Please fix the highlighted errors before sending your message.');
+            if (firstInvalidField) firstInvalidField.focus();
+            return;
+        }
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+        }
+
+        showContactFormStatus(form, 'pending', 'Sending your message...');
+
+        fetch(CONTACT_FORM_SCRIPT_URL, {
+            cache: 'no-cache',
+            redirect: 'follow',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'text/plain;charset=utf-8'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Request failed with status ' + response.status);
+                }
+                return response.text();
+            })
+            .then(function (text) {
+                
+                var result;
+
+                try {
+                    result = JSON.parse(text);
+                } catch (error) {
+                    throw new Error('Invalid server response');
+                }
+
+                if (!result || result.result !== 'success') {
+                    throw new Error(result && result.error ? result.error : 'Form submission failed');
+                }
+
+                handleContactSubmitSuccess(form, fields);
+            })
+            .catch(function (error) {
+                console.error(error);
+                showContactFormStatus(form, 'error', error.message || 'Unable to send message right now. Please try again.');
+                showContactPopup('error', 'Submission Failed', error.message || 'Unable to send message right now. Please try again.');
+            })
+            .finally(function () {
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                }
+            });
     });
 }
 
