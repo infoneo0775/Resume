@@ -745,24 +745,32 @@ var RESUME_DATA = {
             summary: 'Full-stack SaaS email marketing platform covering user onboarding, contact management, template creation, campaign scheduling, and reporting — built for business teams to run and track email campaigns end to end.',
             images: [
                 {
-                    url: 'file:///C:/Users/ITPL0043/Pictures/Screenshots/Screenshot%20(37).png',
-                    label: 'Mailiam Dashboard Overview'
+                    url: 'https://resume0775.s3.eu-north-1.amazonaws.com/mailiam_email_compaign.png',
+                    label: 'Mailiam Email Campaign Dashboard'
                 },
                 {
-                    url: 'file:///C:/Users/ITPL0043/Pictures/Screenshots/Screenshot%20(38).png',
-                    label: 'Mailiam Contacts Module'
+                    url: 'https://resume0775.s3.eu-north-1.amazonaws.com/mailiam_setup_temp_page.png',
+                    label: 'Mailiam Template Setup Page'
                 },
                 {
-                    url: 'file:///C:/Users/ITPL0043/Pictures/Screenshots/Screenshot%20(39).png',
+                    url: 'https://resume0775.s3.eu-north-1.amazonaws.com/mailiam_setup_template.png',
                     label: 'Mailiam Template Builder'
                 },
                 {
-                    url: 'file:///C:/Users/ITPL0043/Pictures/Screenshots/Screenshot%20(40).png',
-                    label: 'Mailiam Campaign Flow'
+                    url: 'https://resume0775.s3.eu-north-1.amazonaws.com/mailiam_setup_temple.png',
+                    label: 'Mailiam Template Preview'
                 },
                 {
-                    url: 'file:///C:/Users/ITPL0043/Pictures/Screenshots/Screenshot%20(42).png',
-                    label: 'Mailiam Campaign Reporting'
+                    url: 'https://resume0775.s3.eu-north-1.amazonaws.com/mailiam_sms_tem_template.png',
+                    label: 'Mailiam SMS Template Config'
+                },
+                {
+                    url: 'https://resume0775.s3.eu-north-1.amazonaws.com/mailiam_bussiness_size.png',
+                    label: 'Mailiam Business Size Selection'
+                },
+                {
+                    url: 'https://resume0775.s3.eu-north-1.amazonaws.com/mailiam_data_mapping.png',
+                    label: 'Mailiam Data Mapping Flow'
                 }
             ],
             techStack: ['Node.js', 'Angular', 'MySQL', 'REST APIs', 'Multi-step Onboarding', 'RBAC', 'Email Campaigns'],
