@@ -329,62 +329,6 @@ var RESUME_DATA = {
             ]
         },
         {
-            title: 'GAIL Reporting, PDF and Excel Automation',
-            domain: 'Reporting Automation',
-            company: 'Infoneo at GAIL Corporate Office',
-            period: 'Jan 2025 - Present',
-            icon: 'fas fa-file-lines',
-            summary: 'High-value reporting layer for operational visibility, document exports, and faster decision support across CNG business workflows.',
-            techStack: ['MySQL', 'Node.js', 'PDF Generation', 'Excel Export', 'API Caching', 'Query Optimization'],
-            quickHighlights: [
-                'Reduced report runtimes by 40%+ through SQL optimization.',
-                'Built PDF and Excel export pipelines for operational reporting.',
-                'Supported real-time reporting with lazy loading and API caching.',
-                'Improved reporting usability for business and compliance teams.'
-            ],
-            businessOverview: 'This reporting workstream focused on making operational data usable at business speed through reliable exports, optimized queries, and structured reporting endpoints.',
-            problemStatement: 'Existing reports were slow, difficult to operationalize, and too dependent on manual extraction for teams that needed consistent business and compliance visibility.',
-            role: 'Software Engineer',
-            responsibilities: [
-                'Optimized database access patterns for report-heavy workflows.',
-                'Implemented export pipelines for PDF and Excel-based reporting.',
-                'Supported API responses designed for large operational datasets.'
-            ],
-            featuresImplemented: [
-                'Real-time report generation endpoints.',
-                'PDF and Excel export flows for business reporting.',
-                'Lazy-loading support for large result sets.',
-                'Caching-aware APIs for frequent report consumers.'
-            ],
-            technologiesUsed: ['Node.js', 'MySQL', 'Indexing', 'Stored Procedures', 'PDF Pipelines', 'Excel Pipelines'],
-            challengesFaced: [
-                'Handling slow-running queries on operational datasets.',
-                'Generating business-friendly exports without degrading API responsiveness.',
-                'Balancing reporting depth with performance expectations.'
-            ],
-            solutionsDelivered: [
-                'Optimized query design, indexing, and stored procedure usage.',
-                'Built export-oriented workflows around PDF and Excel outputs.',
-                'Introduced response patterns that improved usability for large reports.'
-            ],
-            businessImpact: [
-                'Cut report runtimes by more than 40%.',
-                'Improved access to operational and compliance data through direct exports.',
-                'Made reporting workflows faster and more dependable for business users.'
-            ],
-            moduleBreakdown: [
-                'Operational reports',
-                'Excel export workflows',
-                'PDF output pipelines',
-                'Query-optimized data access'
-            ],
-            architecturePoints: [
-                'Performance centered on query optimization and stored procedure usage.',
-                'Report APIs designed for large data volumes and export-friendly responses.',
-                'Caching and lazy loading used to protect frontend experience.'
-            ]
-        },
-        {
             title: 'GAILGAS Intranet Application Suite',
             domain: 'Internal Portal',
             company: 'GAILGAS',
@@ -532,62 +476,6 @@ var RESUME_DATA = {
                 'Insurer integrations abstracted behind a unified adapter layer to normalise formats and handle failures gracefully.',
                 'RBAC implemented as a configurable permission matrix supporting dynamic institutional hierarchy mapping.',
                 'Claims and issuance flows designed as stateful pipelines with audit trails and async status reconciliation support.'
-            ]
-        },
-        {
-            title: 'Finhaat Data Validation and Scheduled Services',
-            domain: 'Workflow Automation',
-            company: 'CodeFire',
-            period: 'May 2023 - Sep 2024',
-            icon: 'fas fa-gears',
-            summary: 'Automation-heavy backend workstream for high-volume Excel validation, scheduled services, caching, and deployment support.',
-            techStack: ['Excel Validation', 'Cron Jobs', 'Redis', 'Node.js', 'Jenkins', 'PM2'],
-            quickHighlights: [
-                'Built high-volume Excel validation workflows.',
-                'Improved data accuracy and reduced processing errors by 35%.',
-                'Designed 5+ cron services and Redis-backed performance improvements.',
-                'Helped reduce API load by 45% and downtime incidents by 30%.'
-            ],
-            businessOverview: 'This workstream focused on data-heavy operational reliability, combining scheduled jobs, validation logic, caching, and deployment support to keep business workflows dependable at scale.',
-            problemStatement: 'Teams needed better control over high-volume spreadsheet inputs, recurring background processing, and API performance under operational load.',
-            role: 'Software Engineer',
-            responsibilities: [
-                'Built validation logic for high-volume Excel processing.',
-                'Designed scheduled services for recurring workflow tasks.',
-                'Supported deployment and runtime reliability using PM2, Jenkins, and AWS.'
-            ],
-            featuresImplemented: [
-                'Excel data validation pipelines.',
-                'Five or more cron-driven backend services.',
-                'Redis caching for high-frequency API access.',
-                'Deployment support aligned with CI/CD operations.'
-            ],
-            technologiesUsed: ['Node.js', 'Redis', 'Cron Jobs', 'Jenkins', 'PM2', 'AWS'],
-            challengesFaced: [
-                'Validating high-volume input data without slowing operations.',
-                'Managing repeated backend workloads efficiently.',
-                'Reducing API strain while keeping delivery stable in production.'
-            ],
-            solutionsDelivered: [
-                'Introduced structured validation for Excel-driven workflows.',
-                'Automated repeatable backend tasks using cron services.',
-                'Reduced repeated API computation with Redis caching and deployment discipline.'
-            ],
-            businessImpact: [
-                'Improved data accuracy and reduced processing errors by 35%.',
-                'Reduced API load by 45%.',
-                'Reduced downtime incidents by 30%.'
-            ],
-            moduleBreakdown: [
-                'Excel validation pipelines',
-                'Scheduled backend services',
-                'Caching layer support',
-                'Deployment and uptime workflows'
-            ],
-            architecturePoints: [
-                'Background jobs separated from request-driven application flows.',
-                'Caching introduced to offload repeated API pressure.',
-                'Operational delivery supported through CI/CD and process management.'
             ]
         },
         {
