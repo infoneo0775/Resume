@@ -485,6 +485,28 @@ var RESUME_DATA = {
             period: 'Jun 2022 - May 2023',
             icon: 'fas fa-link',
             summary: 'Traceability platform for tamper-proof material verification, supply chain visibility, and digital product passport automation.',
+            images: [
+                {
+                    url: 'https://resume0775.s3.eu-north-1.amazonaws.com/aware_producer.png',
+                    label: 'Aware Producer'
+                },
+                {
+                    url: 'https://resume0775.s3.eu-north-1.amazonaws.com/aware_producer_add_loction.png',
+                    label: 'Aware Producer Add Location'
+                },
+                {
+                    url: 'https://resume0775.s3.eu-north-1.amazonaws.com/aware_digit_password.svg',
+                    label: 'Aware Digital Passport'
+                },
+                {
+                    url: 'https://resume0775.s3.eu-north-1.amazonaws.com/aware_product_producer.svg',
+                    label: 'Aware Product Producer'
+                },
+                {
+                    url: 'https://resume0775.s3.eu-north-1.amazonaws.com/aware_token.png',
+                    label: 'Aware Token'
+                }
+            ],
             techStack: ['Node.js', 'REST APIs', 'Traceability', 'Compliance Reporting', 'Verification Flows'],
             quickHighlights: [
                 'Engineered core verification features for material traceability.',
